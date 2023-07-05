@@ -3,16 +3,18 @@ Install Unit on a supported operating system  https://unit.nginx.org/installatio
  
 # Next follow the steps below 
 For this demo
+
 For Node.js-based examples, see our Express, Koa, and Docker howtos or a basic sample.
 
 Next, install unit-Http
-sudo npm install -g --unsafe-perm unit-http 
+#sudo npm install -g --unsafe-perm unit-http 
 
-Install express framework  https://unit.nginx.org/howto/express/  Follow the steps here.
-mkdir -p demo
-cd demo
-npm install express --save
-npm link unit-http  #First, you need to have the unit-http module installed. If it’s global, symlink it in your project directory:
+#Install express framework  https://unit.nginx.org/howto/express/  Follow the steps here.
+#mkdir -p demo
+
+#cd demo
+#npm install express --save
+#npm link unit-http  #First, you need to have the unit-http module installed. If it’s global, symlink it in your project directory:
 
 Create your Express app; let’s store it as /demo/apollo.js. First, initialize the directory:
 npm init
@@ -22,6 +24,7 @@ cd demo
 npm install @apollo/server express graphql cors body-parser
  
 Next, prepare the Express configuration for Unit:
+
 
 {
     "listeners": {
@@ -55,7 +58,7 @@ Please upload the revised configuration. If the JSON file mentioned above has be
 
 Run the below cmd to update the configuration: 
 
-curl -X PUT --data-binary @demo.json --unix-socket   /var/run/control.unit.sock http://localhost/config -v
+#curl -X PUT --data-binary @demo.json --unix-socket   /var/run/control.unit.sock http://localhost/config -v
 
 After a successful update, you should see the app should be available on the listener’s IP address and port:
 
