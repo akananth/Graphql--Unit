@@ -1,0 +1,25 @@
+{
+    "listeners": {
+        "*:4003": {
+            "pass": "applications/express"
+        }
+    },
+
+    "applications": {
+        "express": {
+            "type": "external",
+            "user": "unit",
+            "group": "unit",
+            "working_directory": "/home/admin/apollo",  #this the directory where application is running 
+            "executable": "/usr/bin/env",
+            "arguments": [
+                "node",
+                "--loader",
+                "unit-http/loader.mjs",
+                "--require",
+                "unit-http/loader",
+                "apollo.js"  #name of the application
+            ]
+        }
+    }
+}
