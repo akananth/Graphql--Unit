@@ -2,9 +2,9 @@
 * Install Unit on a supported operating system  https://unit.nginx.org/installation/
  
 # Next follow the steps below 
-*For this demo
+*For this demo we will  be using Express as a node js web application framework that provides broad features for building Apollo Graphql Server.
 
-*For Node.js-based examples, see our Express, Koa, and Docker howtos or a basic sample.
+* NGINX Unit support  see our Express, Koa, and Docker howtos or a basic sample.
 
 ```
 $ sudo npm install -g --unsafe-perm unit-http  #Next, install unit-Http
