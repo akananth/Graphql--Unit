@@ -12,7 +12,7 @@ $ cd demo
 $ npm install express --save  #Install express framework  https://unit.nginx.org/howto/express/ 
 $ npm link unit-http  #First, you need to have the unit-http module installed. If it’s global, symlink it in your project directory:
 ```
-* Create your Express app; let’s store it as /demo/apollo.js.
+* Create your Apollo GraphQL hello app; let’s store it as /demo/apollo.js.
 
 ```
 import { ApolloServer } from '@apollo/server';
