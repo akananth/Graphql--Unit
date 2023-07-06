@@ -2,19 +2,17 @@
 * Install Unit on a supported operating system  https://unit.nginx.org/installation/
  
 # Next follow the steps below 
-*For this demo we will  be using Express as a node js web application framework that provides broad features for building Apollo Graphql Server.
+*For this demo we will be using Express as a node js web application framework that provides broad features for building Apollo Graphql Server.
 
-* NGINX Unit support  see our Express, Koa, and Docker howtos or a basic sample.
-
+* For assistance with NGINX Unit, please refer to our how tos on Express, Koa, and Docker or take a look at our basic sample.
 ```
 $ sudo npm install -g --unsafe-perm unit-http  #Next, install unit-Http
 $ mkdir -p demo
 $ cd demo
 $ npm install express --save  #Install express framework  https://unit.nginx.org/howto/express/ 
 $ npm link unit-http  #First, you need to have the unit-http module installed. If it’s global, symlink it in your project directory:
-$ npm init
 ```
-* Create your Express app; let’s store it as /demo/apollo.js. First, initialize the directory:
+* Create your Express app; let’s store it as /demo/apollo.js.
 
 ```
 import { ApolloServer } from '@apollo/server';
@@ -74,6 +72,21 @@ app.use(
 await new Promise((resolve) => httpServer.listen({ port: 4003 }, resolve));
 
 ```
+*  Next  initialize the directory:
+```
+$ npm init
+```
+
+*The file should be made executable so the application can run on Unit:
+
+```
+chmod +x apollo.js
+```
+* Run the following command so the Unit can access the application directory:
+
+```
+chown -R unit:unit /demo
+```
 
 
 # Next follow the steps below to install Apollo GraphQl
@@ -82,7 +95,8 @@ $ cd demo
 $ npm install @apollo/server express graphql cors body-parser
 
 ```
-* Next, prepare the Express configuration for Unit:
+
+# Next, prepare the Express configuration for Unit:
 
 ```
 {
@@ -113,7 +127,6 @@ $ npm install @apollo/server express graphql cors body-parser
 ```
 *Save this as demo.json
 
-*Please upload the revised configuration. If the JSON file mentioned above has been added to demo.json.
 
 *Run the below cmd to update the configuration: 
 
