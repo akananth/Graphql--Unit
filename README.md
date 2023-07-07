@@ -4,7 +4,7 @@
 # Next follow the steps below 
 *For this demo we will be using Express as a node js web application framework that provides broad features for building Apollo Graphql Server.
 
-* For assistance with NGINX Unit, please refer to our how tos on Express, Koa, and Docker or take a look at our basic sample.
+*For more information about UNIT, kindly click on the link provided : https://unit.nginx.org/howto/#
 ```
 $ sudo npm install -g --unsafe-perm unit-http  #Next, install unit-Http
 $ mkdir -p demo
@@ -77,16 +77,7 @@ await new Promise((resolve) => httpServer.listen({ port: 4003 }, resolve));
 $ npm init
 ```
 
-*The file should be made executable so the application can run on Unit:
 
-```
-chmod +x apollo.js
-```
-* Run the following command so the Unit can access the application directory:
-
-```
-chown -R unit:unit /demo
-```
 
 
 # Next follow the steps below to install Apollo GraphQl
@@ -127,7 +118,16 @@ $ npm install @apollo/server express graphql cors body-parser
 ```
 *Save this as demo.json
 
+*The file should be made executable so the application can run on Unit:
 
+```
+chmod +x apollo.js
+```
+* Run the following command so the Unit can access the application directory:
+
+```
+chown -R unit:unit /demo
+```
 *Run the below cmd to update the configuration: 
 
 ```
